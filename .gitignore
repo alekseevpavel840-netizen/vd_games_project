@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: if you don't want to keep built distributions
+# dist/
