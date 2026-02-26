@@ -4,10 +4,27 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "prompt>=0.4.1",
+]
 
 [project.scripts]
 vd-start = "VD_games.scripts.VD_main:main"
+VD-even = "VD_games.scripts.VD_even:main"
+
+[tool.ruff]
+line-length = 79
+exclude = [".venv", "dist", "build"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "C", "N", "D"]
+ignore = [
+    # Игнорируем проверку имён модулей (чтобы не ругался на VD_games)
+    "N999",
+    # Отключаем конфликтующие правила docstring
+    "D203",   # конфликтует с D211
+    "D213",   # конфликтует с D212
+]
 
 [tool.hatch.build.targets.wheel]
 packages = ["VD_games"]
@@ -15,3 +32,8 @@ packages = ["VD_games"]
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.3",
+]

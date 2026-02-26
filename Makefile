@@ -11,3 +11,6 @@ build:  ## Собрать дистрибутив (wheel + source distribution)
 
 package-install:  ## Установить собранный пакет глобально
 	uv tool install dist/*.whl
+
+lint:  ## Запустить линтер Ruff
+	uv run ruff check VD_games
