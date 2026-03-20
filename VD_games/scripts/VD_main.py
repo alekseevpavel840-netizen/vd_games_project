@@ -1,7 +1,6 @@
-from VD_games.scripts.VD_games import get_greeting
+"""Точка входа для игры VD-games (приветствие)."""
 
-def main():
-    print(get_greeting())
+from VD_games.scripts.VD_games import main
 
 if __name__ == "__main__":
     main()
